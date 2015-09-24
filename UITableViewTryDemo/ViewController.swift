@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomTableViewCell
+        let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomTableViewCell
         
         cell.setCell(content[indexPath.row].getName(), age: content[indexPath.row].getAge())
         
@@ -80,7 +80,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var detailsViewController: DetailsViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailsViewController") as! DetailsViewController
+        let detailsViewController: DetailsViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailsViewController") as! DetailsViewController
         
         detailsViewController.model = content[indexPath.row].getName()
 
